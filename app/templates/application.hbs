@@ -1,7 +1,16 @@
-{{page-title "Filter"}}
-
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{page-title "Filter Demo"}}
+<table>
+    <caption>List of Students</caption>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Sport</th>
+    </tr>
+    {{#each this.students as |student|}}
+        <tr>
+            <th scope="row">{{concat student.firstName " " student.lastName}}</th>
+            <th scope="row">{{student.grade}}</th>
+            <th scope="row">{{student.sport}}</th>
+        </tr>
+    {{/each}}
+</table>
